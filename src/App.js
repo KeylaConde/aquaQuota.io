@@ -1,36 +1,42 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { WeightInput } from './WeightInput';
+import { WaterCupCount } from './WaterCupCount';
+import { ImageOfGlass } from './image';
 import './App.css';
+
+const glassesOfWater = ({ number }) => {
+  const images = Array.from({ length:number },
+     (_, index) => index++);
+
+     return (
+      <div>
+        {images.map((imageNumber) => (
+          <imageOfGlass key={imageNumber}/>
+        ))}
+      </div>
+     );
+};
 
 function App() {
   return (
+    <>
 
-    <div className="App">
-
+      <h1>Aqua Quota</h1>
+    
       <WeightInput />
-      <WaterCupCount />
+
+      <WaterCupCount glasses={7} />
+      <ImageOfGlass />
       
-    </div>
-  );
-}
-
-function WeightInput() {
-  return (
-    <input placeholder='Weight'>
-    </input>
-  )
-}
-
-// WaterCupCount return how many glasses of water the user shoulds to drink in a day
-
-function WaterCupCount() {
-  return (
-    <p>You should to drink
-      <span>7</span>
-      glasses of water.
-    </p>
+    </>
   );
 }
 
 export default App;
+
+/*React.Fragment allows replace unnecesary divs and is also invisible
+in our HTML from the browser*/
+
+//from here(WaterCupCount) I send the props
 
 // Edit this file to see changes in the app

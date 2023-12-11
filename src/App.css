@@ -1,8 +1,14 @@
-.App {
+
+h1 {
   text-align: center;
+  padding-top: 30px;
+  padding-bottom: 48px;
+  text-shadow: 2px 5px 2px rgba(0, 0, 0, 0.4);
+  font-size: 40px;
+  color: aqua;
 }
 
-.App-logo {
+/*.App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +41,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+}*/
